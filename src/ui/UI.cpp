@@ -53,7 +53,7 @@ class CWallpaperTarget::CImagesData {
 
 CWallpaperTarget::CWallpaperTarget(SP<Hyprtoolkit::IBackend> backend, SP<Hyprtoolkit::IOutput> output, const std::vector<std::string>& path, Hyprtoolkit::eImageFitMode fitMode,
                                    const int timeout, const std::string& order) : m_monitorName(output->port()), m_backend(backend) {
-    static const auto SPLASH_REPLY = HyprlandSocket::getFromSocket("/splash");
+    const auto SPLASH_REPLY = HyprlandSocket::getFromSocket("/splash");
 
     static const auto PENABLESPLASH = Hyprlang::CSimpleConfigValue<Hyprlang::INT>(g_config->hyprlang(), "splash");
     static const auto PSPLASHOFFSET = Hyprlang::CSimpleConfigValue<Hyprlang::INT>(g_config->hyprlang(), "splash_offset");
